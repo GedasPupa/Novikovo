@@ -56,8 +56,8 @@ function lenktynes(masinytes) {
 
 function rusiuok() {
     for (let i=0; i<8; i++) {
-        for (let j=0; j<8; j++) {
-            if (masinytes[i].kelias > masinytes[j].kelias) {
+        for (let j=i+1; j<8; j++) {
+            if (masinytes[i].kelias < masinytes[j].kelias) {
                 let tmp = masinytes[i];
                 masinytes[i] = masinytes[j];
                 masinytes[j] = tmp;
