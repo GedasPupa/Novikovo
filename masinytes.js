@@ -34,15 +34,15 @@ function simtasKm (vardas, kelias) {
 
 function lenktynes(masinytes) {
     while (!finish) {
-        for (let i=0; i<8; i++) {
+        for (let i=0; i<masinytes.length; i++) {
             let randNumber = Math.random();
             if (randNumber < 0.2) {
-                masinytes[i].greitis -= Math.floor(Math.random() * 5);
+                masinytes[i].greitis -= Math.floor(Math.random() * 5 + 1);
                 masinytes[i].kelias -= masinytes[i].greitis;
                 simtasKm(masinytes[i].pavadinimas, masinytes[i].kelias);
                 arLaimejo(masinytes[i].pavadinimas, masinytes[i].kelias);
             } else if (randNumber < 0.7) {
-                masinytes[i].greitis += Math.floor(Math.random() * 10);
+                masinytes[i].greitis += Math.floor(Math.random() * 10 + 1);
                 masinytes[i].kelias += masinytes[i].greitis;
                 simtasKm(masinytes[i].pavadinimas, masinytes[i].kelias);
                 arLaimejo(masinytes[i].pavadinimas, masinytes[i].kelias);
@@ -55,13 +55,13 @@ function lenktynes(masinytes) {
 }
 
 function rusiuok() {
-    for (let i=0; i<8; i++) {
-        for (let j=i+1; j<8; j++) {
+    for (let i=0; i<masinytes.length-1; i++) {
+        for (let j=i+1; j<masinytes.length; j++) {
             if (masinytes[i].kelias < masinytes[j].kelias) {
                 let tmp = masinytes[i];
                 masinytes[i] = masinytes[j];
                 masinytes[j] = tmp;
-            } else if (masinytes[i].kelias === masinytes[j].kelias && masinytes[i].greitis > masinytes[j].greitis) {
+            } else if (masinytes[i].kelias === masinytes[j].kelias && masinytes[i].greitis < masinytes[j].greitis) {
                 let tmp = masinytes[i];
                 masinytes[i] = masinytes[j];
                 masinytes[j] = tmp;
