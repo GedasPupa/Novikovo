@@ -33,7 +33,8 @@ Cup.prototype.drink = function(vol) {
 }
 
 function Thermos(color, maxVolume) {
-    Cup.apply(this, arguments);
+    // Cup.apply(this, arguments);
+    Cup.call(this, color, maxVolume);
     this.temperature = 21;
 }
 Thermos.prototype = Object.create(Cup.prototype);
@@ -55,6 +56,10 @@ therm1.drink(-10);
 therm1.drink(777);
 console.log(therm1);
 
+console.log(Thermos.prototype);
+console.log(therm1.__proto__);
+console.log(therm1.__proto__.constructor);
+
 // let puodas = new Cup('Green', 300);
 // puodas.brew(180);
 // puodas.brew(170);
@@ -63,3 +68,19 @@ console.log(therm1);
 // puodas.drink(500);
 // puodas.drink(10);
 // console.log(puodas);
+// console.log(Cup.prototype);
+// console.log(puodas.__proto__);
+
+
+/*
+
+const o = {
+    savybe: 10
+};
+
+// //same same:
+
+const o1 = new Object();
+o1.savybe = 10;
+
+*/
