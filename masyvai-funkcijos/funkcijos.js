@@ -1,11 +1,20 @@
 "use strict";
 
+function faktorialas(sk) {
+    if (sk === 0) {
+        return 1;
+    }
+    return sk * faktorialas(sk - 1);
+}
+console.log('FAKTORIALAS:');
+console.log(faktorialas(170));
+
 // REKURSINĖ FUNKCIJA
 // Parašyti Fibonači skaičius iki nurodyto maksimalaus. Input: 1, 1, maxSk
 
 function fibonacci(sk1, sk2, max) {
     if (sk1 > max) return;
-    console.log('Fibonacci: ' + (sk1));
+    // console.log('Fibonacci: ' + (sk1));
     return fibonacci(sk2, (sk1+sk2), max);
 };
 
@@ -44,7 +53,7 @@ function calc(n1, n2, calculate) {
     } else undefined;
 }
 
-console.log(calc(10, 5, mul));
+// console.log(calc(10, 5, mul));
 // console.log(calc(7, 3, 7)); ---> undefined
 
 // typeof
@@ -85,7 +94,7 @@ function sumArguments() {
 console.log(sumArguments("aa", "bb", 1, 2, 7, 7, 4));
 
 function pasisveikinimas(vardas="bevardis", pavarde="bepavardis") {
-    console.log(arguments);
+    // console.log(arguments);
     console.log('Labas ' + pavarde + ' ' + arguments[1] + ' ' + vardas + ' ' + arguments[0])
 }
 
