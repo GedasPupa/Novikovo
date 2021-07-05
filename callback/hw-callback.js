@@ -10,7 +10,7 @@ fs.readFile('4.txt', (error, data) => {
             const masyvas = stringas.split(' ');
             for (let i=0; i<masyvas.length-1; i++) {
                 for (let j=i+1; j<masyvas.length; j++) {
-                    if (masyvas[i].length < masyvas[j].length) {
+                    if (masyvas[i].length > masyvas[j].length) {
                         let tmp = masyvas[i];
                         masyvas[i] = masyvas[j];
                         masyvas[j] = tmp;
